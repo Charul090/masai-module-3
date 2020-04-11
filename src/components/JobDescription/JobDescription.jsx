@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import styles from "./JobDescription.module.css";
 import { v1 as uuidv1 } from 'uuid';
+import NotFound from "../NotFound/NotFound.jsx"
 
 
 export default class JobDescription extends React.Component {
@@ -9,7 +10,8 @@ export default class JobDescription extends React.Component {
         super(props)
 
         this.state = {
-            data: ""
+            data: "",
+            status:false
         }
     }
 
@@ -18,13 +20,23 @@ export default class JobDescription extends React.Component {
 
         let id = match.params.id;
 
-        axios({
-            method: "get",
-            url: `https://jobs.github.com/positions/${id}.json`
-        }).then((res) => res.data)
-            .then((elem) => {
-                this.setState({ data: elem })
-            })
+        let x=this.props.data.find((elem)=>{
+            return elem.id === id
+        });
+
+        if(x === undefined){
+            this.setState({status:true})
+        }
+
+        else{
+            axios({
+                method: "get",
+                url: `https://jobs.github.com/positions/${id}.json`
+            }).then((res) => res.data)
+                .then((elem) => {
+                    this.setState({ data: elem })
+                })
+        }
     }
 
     render() {
@@ -36,6 +48,12 @@ export default class JobDescription extends React.Component {
 
         let array=z.split("\n")
         array=array.map((num)=><p key={uuidv1()}>{num}</p>);
+
+        if(this.state.status){
+            return (
+                <NotFound />
+            )
+        }
 
         if(this.state.data !== ""){
             return (
