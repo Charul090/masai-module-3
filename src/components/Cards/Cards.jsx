@@ -1,5 +1,6 @@
 import React,{Component} from "react";
-import styles from "./Cards.module.css"
+import styles from "./Cards.module.css";
+import {Link} from "react-router-dom"
 
 export default class Card extends React.Component{
     constructor(props){
@@ -17,7 +18,9 @@ export default class Card extends React.Component{
                 <div>
                     <p className="text-left">
                         <span className="h3">
-                            {title}
+                            <Link to={`/${this.props.data.id}`} >
+                                {title}
+                            </Link>
                         </span>
                         <br></br>
                         <span>

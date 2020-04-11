@@ -22,8 +22,8 @@ export default class CardDisplay extends React.Component {
             <div className={styles.display}>
                 {
                     elements.length === 0 && this.props.status === true ?
-                        <div class="spinner-border" role="status">
-                            <span class="sr-only">Loading...</span>
+                        <div className="spinner-border" role="status">
+                            <span className="sr-only">Loading...</span>
                         </div> :
                         elements
                 }

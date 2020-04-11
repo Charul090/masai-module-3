@@ -18,7 +18,7 @@ export default class Header extends React.Component {
                 </div>
                 <div className={styles.links}>
                     <div className={styles.link}>
-                        <Link to="/" exact>
+                        <Link to="/">
                             Home
                         </Link>
                     </div>
