@@ -22,11 +22,12 @@
 }
 
 .links{
-    width:30%;
-    padding: 10px;
+    width:20%;
+    padding: 20px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    flex-direction: row-reverse;
+    justify-content: right;
 }
 
 .link a{
