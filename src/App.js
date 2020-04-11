@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
-import Body from "./components/Body/Body.jsx"
+import Body from "./components/Body/Body.jsx";
+import Header from "./components/Header/Header.jsx"
 
 class App extends React.Component{
   constructor(props){
@@ -24,6 +25,7 @@ class App extends React.Component{
     
     return (
       <div className="App">
+        <Header />
         <Body data={this.state.data} method={this.setData} status={this.state.status} statusMethod={this.setStatus}/>
       </div>
     );

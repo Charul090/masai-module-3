@@ -1,0 +1,39 @@
+.header{
+    width:100%;
+    display:flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ECEFF1;
+}
+
+.logo{
+    width:20%;
+    padding: 10px;
+    text-align: left;
+}
+
+.logo > img{
+    max-width: 50px;
+}
+
+.title{
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+.links{
+    width:30%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.link a{
+    text-decoration: none;
+    color:black;
+}
+
+.link a:hover{
+    color:#FFB300;
+}
