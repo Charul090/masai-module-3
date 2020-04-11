@@ -48,9 +48,7 @@ export default class JobDescription extends React.Component {
                             <h5>{this.state.data.type}</h5>
                             <p><i>{this.state.data.location}</i></p>
                         </div>
-                        <div>
-                            {array}
-                        </div>
+                        <div dangerouslySetInnerHTML={{ __html: x }}/>
                     </div>
                     <div className={styles.container}>
                         <div className={styles.logo}>

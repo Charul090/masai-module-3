@@ -30,6 +30,7 @@ export default class Search extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
+        this.props.method([])
         this.props.statusMethod(true);
 
         let description=this.state.description;
