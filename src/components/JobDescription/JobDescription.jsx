@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
-import styles from "./JobDescription.module.css"
+import styles from "./JobDescription.module.css";
+import { v1 as uuidv1 } from 'uuid';
 
 
 export default class JobDescription extends React.Component {
@@ -28,7 +29,14 @@ export default class JobDescription extends React.Component {
 
     render() {
         let x = this.state.data.description
-        let y=this.state.data.how_to_apply
+        let y =document.createElement("div");
+        
+        y.innerHTML=x;
+        let z = y.innerText;
+
+        let array=z.split("\n")
+        array=array.map((num)=><p key={uuidv1()}>{num}</p>);
+
         if(this.state.data !== ""){
             return (
 
@@ -40,8 +48,9 @@ export default class JobDescription extends React.Component {
                             <h5>{this.state.data.type}</h5>
                             <p><i>{this.state.data.location}</i></p>
                         </div>
-                        <div dangerouslySetInnerHTML={{ __html: x }} />
-                        <div dangerouslySetInnerHTML={{ __html: y }} />
+                        <div>
+                            {array}
+                        </div>
                     </div>
                     <div className={styles.container}>
                         <div className={styles.logo}>
