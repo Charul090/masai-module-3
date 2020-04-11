@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "axios"
 
 export default class Search extends React.Component {
     constructor(props) {
@@ -29,6 +30,29 @@ export default class Search extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
+        this.props.statusMethod(true);
+
+        let description=this.state.description;
+        let location=this.state.location;
+        let fulltime=this.state.checked;
+        let obj={}
+        if(description === "" && location === ""){
+            obj["search"]="node";
+        }
+        else{
+            obj["description"]=description;
+            obj["location"]=location;
+            obj["fulltime"]=fulltime;
+        }
+
+        axios({
+            method:"get",
+            url:"https://jobs.github.com/positions.json",
+            params:obj
+        }).then((res)=>res.data)
+        .then((data)=>{
+            this.props.method(data)
+        })
         
     }
 
