@@ -17,23 +17,23 @@ export default class Card extends React.Component{
             <div className={styles.display}>
                 <div>
                     <p className="text-left">
-                        <span className="h3">
+                        <span className={styles.title}>
                             <Link to={`/${this.props.data.id}`} >
                                 {title}
                             </Link>
                         </span>
                         <br></br>
-                        <span>
+                        <span className={styles.company}>
                             {company}
                         </span>
                         &nbsp; &nbsp; &nbsp;
-                        <span className="small font-italic">
+                        <span className={styles.type}>
                             {type}
                         </span>
                     </p>
                 </div>
                 <div>
-                    <p className="small text-right">
+                    <p className={styles.location}>
                         {location}
                     </p>
                 </div>

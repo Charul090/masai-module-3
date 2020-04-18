@@ -22,3 +22,69 @@
 .logo{
     width:50%;
 }
+
+@media only screen and (max-width: 767px){
+    .main{
+        padding:15px;
+        display:grid;
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto;
+    }
+
+    .desc{
+        text-align: justify;
+        grid-area:2/1/2/1;
+    }
+
+    .logo{
+        width:30%;
+    }
+
+    .container{
+        margin-bottom: 10px;
+    }
+
+    .info > h2{
+        font-size:28px;
+    }
+
+    .info > h4{
+        font-size:20px;
+    }
+
+    .info > h5,
+    .info > p{
+        font-size:15px;
+    }
+
+    .desc > div:nth-child(2) p,
+    .desc > div:nth-child(2) ul{
+        font-size:17px;
+    }
+} 
+
+@media only screen and (max-width: 425px) {
+
+    .logo{
+        width:60%;
+    }
+
+    .info > h2{
+        font-size:24px;
+    }
+
+    .info > h4{
+        font-size:18px;
+    }
+
+    .info > h5,
+    .info > p{
+        font-size:13px;
+    }
+
+    .desc > div:nth-child(2) p,
+    .desc > div:nth-child(2) ul{
+        font-size:15px;
+    }
+}
+

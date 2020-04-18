@@ -1,6 +1,6 @@
 # React Project using Github Jobs API
 
-Project showing jobs vanacy in github jobs.Shows jobs according to location, job description and title
+Project showing jobs vacancy in github jobs.Shows jobs according to location, job description and title.
 
 ## Instruction to run locally
 

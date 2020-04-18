@@ -64,18 +64,17 @@ export default class Search extends React.Component {
                 <div className="col-12">
                     <form onSubmit={this.handleSubmit}>
                         <div className="form-row mb-3">
-                            <div className="col-6">
+                            <div className="col-12 mb-2 mb-lg-0 col-lg-6">
                                 <input type="text" name="description" value={this.state.description}
                                     className="form-control" onChange={this.handleInput}
                                     placeholder="description,title,companies..." />
                             </div>
-
-                            <div className="col-6">
+                            <div className="col-12 mb-2 mb-lg-0 col-lg-6">
                                 <input type="text" name="location" value={this.state.location}
                                     className="form-control" onChange={this.handleInput}
                                     placeholder="location..." />
                             </div>
-                            <div className="col-2 form-check form-check-inline">
+                            <div className="col-5 form-check form-check-inline">
                                 <input type="checkbox" name="checked" className="form-check-input" 
                                     onChange={this.handleInput} checked={this.state.checked} />
                                 <label className="form-check-label">Full-Time</label>
@@ -83,7 +82,7 @@ export default class Search extends React.Component {
                         </div>
                         <div className="form-group">
                             <button className="btn btn-dark btn-block btn-sm"
-                                type="submit">SUBMIT</button>
+                            type="submit">SUBMIT</button>
                         </div>
                     </form>
                 </div>
