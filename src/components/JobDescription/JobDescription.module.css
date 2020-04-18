@@ -1,7 +1,11 @@
 .main{
     padding:20px;
+}
+
+.mainone{
     display:grid;
     grid-template-columns: 60% 40%;
+    margin-bottom: 10px;
 }
 
 .desc{
@@ -20,12 +24,15 @@
 }
 
 .logo{
-    width:50%;
+    width:40%;
+}
+
+.wiki{
+    text-align: justify;
 }
 
 @media only screen and (max-width: 767px){
-    .main{
-        padding:15px;
+    .mainone{
         display:grid;
         grid-template-columns: 100%;
         grid-template-rows: auto auto;
@@ -42,6 +49,7 @@
 
     .container{
         margin-bottom: 10px;
+        justify-content: left;
     }
 
     .info > h2{
@@ -57,8 +65,8 @@
         font-size:15px;
     }
 
-    .desc > div:nth-child(2) p,
-    .desc > div:nth-child(2) ul{
+    .wiki > div p,
+    .wiki > div ul{
         font-size:17px;
     }
 } 
@@ -66,7 +74,7 @@
 @media only screen and (max-width: 425px) {
 
     .logo{
-        width:60%;
+        width:40%;
     }
 
     .info > h2{
@@ -82,8 +90,8 @@
         font-size:13px;
     }
 
-    .desc > div:nth-child(2) p,
-    .desc > div:nth-child(2) ul{
+    .wiki > div p,
+    .wiki > div ul{
         font-size:15px;
     }
 }

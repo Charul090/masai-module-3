@@ -11,7 +11,7 @@ export default class JobDescription extends React.Component {
 
         this.state = {
             data: "",
-            status:false
+            status: false
         }
     }
 
@@ -20,15 +20,15 @@ export default class JobDescription extends React.Component {
 
         let id = match.params.id;
 
-        let x=this.props.data.find((elem)=>{
+        let x = this.props.data.find((elem) => {
             return elem.id === id
         });
 
-        if(x === undefined){
-            this.setState({status:true})
+        if (x === undefined) {
+            this.setState({ status: true })
         }
 
-        else{
+        else {
             axios({
                 method: "get",
                 url: `https://jobs.github.com/positions/${id}.json`
@@ -41,43 +41,47 @@ export default class JobDescription extends React.Component {
 
     render() {
         let x = this.state.data.description
-        let y =document.createElement("div");
-        
-        y.innerHTML=x;
-        let z = y.innerText;
+        let y = this.state.data["how_to_apply"];
 
-        let array=z.split("\n")
-        array=array.map((num)=><p key={uuidv1()}>{num}</p>);
-
-        if(this.state.status){
+        if (this.state.status) {
             return (
                 <NotFound />
             )
         }
 
-        if(this.state.data !== ""){
+        if (this.state.data !== "") {
             return (
 
                 <main className={styles.main}>
-                    <div className={styles.desc}>
-                        <div className={styles.info}>
-                            <h2>{this.state.data.title}</h2>
-                            <h4><a href={`${this.state.data.company_url}`}>{this.state.data.company}</a> </h4>
-                            <h5>{this.state.data.type}</h5>
-                            <p><i>{this.state.data.location}</i></p>
+                    <div className={styles.mainone}>
+                        <div className={styles.desc}>
+                            <div className={styles.info}>
+                                <h2>{this.state.data.title}</h2>
+                                <h4><a href={`${this.state.data.company_url}`}>{this.state.data.company}</a> </h4>
+                                <h5>{this.state.data.type}</h5>
+                                <p><i>{this.state.data.location}</i></p>
+                                <button className="btn btn-dark mb-2" type="button" data-toggle="collapse" data-target="#applycard">APPLY NOW</button>
+                                <div className="collapse" id="applycard">
+                                    <div className="card card-body">
+                                        <div className="text-left" dangerouslySetInnerHTML={{ __html: y }} />
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div dangerouslySetInnerHTML={{ __html: x }}/>
+                        <div className={styles.container}>
+                            <div className={styles.logo}>
+                                <img src={`${this.state.data.company_logo}`} className="img-fluid img-thumbnail"></img>
+                            </div>
+                        </div>
                     </div>
-                    <div className={styles.container}>
-                        <div className={styles.logo}>
-                            <img src={`${this.state.data.company_logo}`} className="img-fluid img-thumbnail"></img>
-                        </div>
+                    <div className={styles.wiki}>
+                        <div dangerouslySetInnerHTML={{ __html: x }} />
                     </div>
                 </main>
             )
         }
-        else{
-            return(
+        else {
+            return (
                 <div className="spinner-border" role="status">
                     <span className="sr-only">Loading...</span>
                 </div>
@@ -85,4 +89,6 @@ export default class JobDescription extends React.Component {
         }
 
     }
-} 
+}
+
+//
