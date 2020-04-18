@@ -12,3 +12,7 @@ Project showing jobs vacancy in github jobs.Shows jobs according to location, jo
 
         npm start
 
+### To run this site, you would need to install cors extension in your browser
+        Chrome: [Allow CORS](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?hl=en)
+
+        Firefox: [Allow CORS](https://addons.mozilla.org/en-US/firefox/addon/access-control-allow-origin/)
