@@ -18,6 +18,14 @@ export default class CardDisplay extends React.Component {
             return <Cards data={elem} key={elem.id} id={elem.id} />
         })
 
+        if(this.props.status === "error"){
+            return (
+                <div className={styles.display}>
+                    <h1 className="text-secondary">Network Error</h1>
+                </div>
+            )   
+        }
+
         return (
             <div className={styles.display}>
                 {

@@ -54,6 +54,10 @@ export default class Search extends React.Component {
         .then((data)=>{
             this.props.method(data)
         })
+        .catch((err)=>{
+            console.log(err)
+            this.props.statusMethod("error");
+        })
         
     }
 
