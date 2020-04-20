@@ -26,6 +26,14 @@ export default class CardDisplay extends React.Component {
             )   
         }
 
+        if(this.props.status === "received" && elements.length === 0){
+            return (
+                <div className={styles.display}>
+                    <h1 className="text-secondary">No results found</h1>
+                </div>
+            )   
+        }
+
         return (
             <div className={styles.display}>
                 {

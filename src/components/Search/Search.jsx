@@ -52,7 +52,8 @@ export default class Search extends React.Component {
             params:obj
         }).then((res)=>res.data)
         .then((data)=>{
-            this.props.method(data)
+            this.props.method(data);
+            this.props.statusMethod("received");
         })
         .catch((err)=>{
             console.log(err)
