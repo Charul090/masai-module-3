@@ -31,7 +31,7 @@ export default class JobDescription extends React.Component {
         else {
             axios({
                 method: "get",
-                url: `https://jobs.github.com/positions/${id}.json`
+                url: `https://cors-anywhere.herokuapp.com/jobs.github.com/positions/${id}.json`
             }).then((res) => res.data)
                 .then((elem) => {
                     this.setState({ data: elem })

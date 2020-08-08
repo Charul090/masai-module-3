@@ -48,7 +48,7 @@ export default class Search extends React.Component {
 
         axios({
             method:"get",
-            url:"https://jobs.github.com/positions.json",
+            url:"https://cors-anywhere.herokuapp.com/jobs.github.com/positions.json",
             params:obj
         }).then((res)=>res.data)
         .then((data)=>{
